@@ -10,10 +10,7 @@ function fn() {
 
     var config = {
         env: env,
-        baseUrl: 'https://petstore.swagger.io',
-        username: 'qa',
-        password: 'aW9iZXlhMjAyMQ==',
-        customKarateMethodsClasspath: 'classpath:util/custom-karate-methods.feature'
+        baseUrl: 'https://petstore.swagger.io'
     };
 
     karate.configure('connectTimeout', 60000);
