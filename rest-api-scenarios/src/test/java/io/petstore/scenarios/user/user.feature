@@ -91,3 +91,20 @@ Feature: User Service
     Examples:
       | username | id           | username | firstName          | lastName          | email                   | password | phone       | statusCode | responseContentType | response      |
       | 'user1'  | randomNumber | 'user1'  | 'firstname1-modif' | 'lastname2-modif' | 'user1-modif@gmail.com' | '123456' | '257182471' | 200        | 'application/json'  | { code: 200 } |
+
+
+  Scenario Outline: Delete user by username <username>
+    * def some = Java.type('util.TestDataGenerator')
+    * def randomUUID = some.uuid()
+
+    Given url baseUrl + '/v2/user'
+    And path <username>
+    When method DELETE
+    Then status <statusCode>
+    And match response contains <response>
+
+    Examples:
+      | username   | statusCode | response      |
+      | 'user1'    | 200        | { code: 200 } |
+      | randomUUID | 404        | ''            |
+      | null       | 405        | 'unknown'     |
