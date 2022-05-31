@@ -1,7 +1,7 @@
 function fn() {
 
   var config = {
-	  baseUrl: 'https://petstore.swagger.io '
+	  baseUrl: 'https://petstore.swagger.io'
   }
 
   karate.configure('connectTimeout', 60000);
