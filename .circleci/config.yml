@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    machine: true
+
+    steps:
+      - checkout
+      - run:
+          name: Run API Tests
+          command: |
+            docker-compose up
+
+      - store_artifacts:
+          path: cucumber-html-reports
