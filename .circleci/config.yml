@@ -11,4 +11,4 @@ jobs:
             docker-compose up
 
       - store_artifacts:
-          path: cucumber-html-reports
+          path: target/cucumber-html-reports
