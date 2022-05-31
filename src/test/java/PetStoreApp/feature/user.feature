@@ -1,3 +1,4 @@
+@regression
 Feature: User Service
 
   Background:
@@ -12,12 +13,12 @@ Feature: User Service
          email: '#string',
          password: '#string',
          phone: '#string',
-         userStatus: 1
+         userStatus: '#number'
        }
        """
 
   Scenario Outline: Create user
-    * def some = Java.type('util.TestDataGenerator')
+    * def some = Java.type('PetStoreApp.util.TestDataGenerator')
     * def randomNumber = some.randomNumber(10, 100000)
     * def userRequestBody =
       """
@@ -46,7 +47,7 @@ Feature: User Service
 
 
   Scenario Outline: Retrieve user by username <username>
-    * def some = Java.type('util.TestDataGenerator')
+    * def some = Java.type('PetStoreApp.util.TestDataGenerator')
     * def randomUUID = some.uuid()
 
     Given url baseUrl + '/v2/user'
@@ -64,7 +65,7 @@ Feature: User Service
 
 
   Scenario Outline: Update user
-    * def some = Java.type('util.TestDataGenerator')
+    * def some = Java.type('PetStoreApp.util.TestDataGenerator')
     * def randomNumber = some.randomNumber(10, 100000)
     * def userUpdateRequestBody =
       """
@@ -94,7 +95,7 @@ Feature: User Service
 
 
   Scenario Outline: Delete user by username <username>
-    * def some = Java.type('util.TestDataGenerator')
+    * def some = Java.type('PetStoreApp.util.TestDataGenerator')
     * def randomUUID = some.uuid()
 
     Given url baseUrl + '/v2/user'

@@ -14,7 +14,7 @@ An API Testing framework developed using [Karate DSL](https://github.com/karatel
     git clone https://github.com/Ghada-1992/karate-api-tests.git
     cd karate-api-tests
     ``` 
-* Run all tests locally : 
+* Run all tests locally :
     ```
-    mvn test
+    docker-compose up
     ```

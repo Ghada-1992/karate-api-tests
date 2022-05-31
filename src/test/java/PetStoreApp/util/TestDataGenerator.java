@@ -1,4 +1,4 @@
-package util;
+package PetStoreApp.util;
 
 import java.util.UUID;
 
